@@ -6,8 +6,8 @@ class SharedDialog {
     /** Locators */
     public get locators() {
         return {
-            DIALOG_PRESENCE: this.page.getByTestId("dialog"),
-            CLOSE_DIALOG: this.page.getByTestId("dialog-header-close")
+            DIALOG_PRESENCE: this.page.locator("data-test-id=dialog"),
+            CLOSE_DIALOG: this.page.locator("data-test-id=dialog-header-close")
         };
     }
 

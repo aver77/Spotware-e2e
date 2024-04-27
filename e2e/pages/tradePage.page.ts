@@ -7,14 +7,14 @@ class TradePage {
     /** Locators */
     public get locators() {
         return {
-            LOG_IN_BUTTON: this.page.getByTestId("log-in >> button"),
-            ACCOUNT_CONTROL: this.page.getByTestId("account-control")
+            LOG_IN_BUTTON: this.page.locator("data-test-id=log-in >> button"),
+            ACCOUNT_CONTROL: this.page.locator("data-test-id=account-control")
         };
     }
 
     /** Actions */
     public async login(login: string, password: string) {
-        await this.locators.LOG_IN_BUTTON.click();
+        await this.page.locator("data-test-id=log-in >> button").click();
         const LD = new LoginDialog(this.page);
         await LD.login(login, password);
     }

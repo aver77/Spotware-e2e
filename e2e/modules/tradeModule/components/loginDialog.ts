@@ -12,21 +12,23 @@ class LoginDialog extends SharedDialog {
 
         return {
             ...sharedLocators,
-            LOGIN_INPUT: this.page.getByTestId("email >> input"),
-            PASSWORD_INPUT: this.page.getByTestId("password >> input"),
-            LOG_IN_TAB: this.page.getByTestId("signin-tab"),
-            SING_UP_TAB: this.page.getByTestId("signup-tab"),
-            SUBMIT_BUTTON: this.page.getByTestId("submit >> button")
+            LOGIN_INPUT: this.page.locator("data-test-id=email >> input"),
+            PASSWORD_INPUT: this.page.locator("data-test-id=password >> input"),
+            LOG_IN_TAB: this.page.locator("data-test-id=signin-tab"),
+            SING_UP_TAB: this.page.locator("data-test-id=signup-tab"),
+            SUBMIT_BUTTON: this.page.locator("data-test-id=submit >> button")
         };
     }
 
     /** Actions */
     public async inputLogin(login: string) {
+        await this.locators.LOGIN_INPUT.click();
         await this.locators.LOGIN_INPUT.fill(login);
     }
 
     public async inputPassword(password: string) {
-        await this.locators.LOGIN_INPUT.fill(password);
+        await this.locators.PASSWORD_INPUT.click();
+        await this.locators.PASSWORD_INPUT.fill(password);
     }
 
     public async login(login: string, password: string) {
