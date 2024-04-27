@@ -11,7 +11,7 @@ setup("login", async ({ page }) => {
         throw new Error(".env file error");
     }
 
-    await page.goto("https://app.ctrader.com");
+    await page.goto("/");
     const TP = new TradePage(page);
     await TP.login(process.env.LOGIN as string, process.env.PASSWORD as string);
     await expect(TP.locators.ACCOUNT_CONTROL).toBeVisible();

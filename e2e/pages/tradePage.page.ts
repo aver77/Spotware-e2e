@@ -10,10 +10,13 @@ class TradePage {
 
     /** Locators */
     public get locators() {
+        const HEADER = this.page.locator("data-test-id=active-chart-toolbar");
+
         return {
+            HEADER,
             LOG_IN_BUTTON: this.page.locator("data-test-id=log-in >> button"),
             ACCOUNT_CONTROL: this.page.locator("data-test-id=account-control"),
-            NEW_ORDER_BUTTON: this.page.locator("new-order-button")
+            NEW_ORDER_BUTTON: HEADER.locator("data-test-id=new-order-button >> button")
         };
     }
 
