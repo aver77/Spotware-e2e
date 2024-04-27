@@ -1,5 +1,5 @@
 import { test as setup, expect } from "@playwright/test";
-import TradePage from "pages/tradePage.page";
+import TradePage from "pages/tradePage/tradePage.page";
 
 const authFile = "playwright/.auth/user.json";
 

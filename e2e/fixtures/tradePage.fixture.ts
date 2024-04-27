@@ -1,5 +1,5 @@
 import { test as base } from "@playwright/test";
-import TradePage from "pages/tradePage.page";
+import TradePage from "pages/tradePage/tradePage.page";
 
 export const test = base.extend<{
     tradePage: TradePage;

@@ -1,11 +1,14 @@
 import { Page } from "@playwright/test";
-import LoginDialog from "modules/tradeModule/components/loginDialog";
-import OrderDialog from "modules/tradeModule/components/orderDialog";
+import LoginDialog from "./components/loginDialog";
+import OrderDialog from "./components/orderDialog";
+import PositionTable from "pages/tradePage/components/positionTable";
 
 class TradePage {
     orderDialog: OrderDialog;
+    positionTable: PositionTable;
     constructor(readonly page: Page) {
         this.orderDialog = new OrderDialog(page);
+        this.positionTable = new PositionTable(page);
     }
 
     /** Locators */
