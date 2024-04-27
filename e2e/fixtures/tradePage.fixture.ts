@@ -6,7 +6,7 @@ export const test = base.extend<{
 }>({
     tradePage: async ({ page }, use) => {
         const tradePage = new TradePage(page);
-        await tradePage.page.goto("https://app.ctrader.com");
+        await tradePage.page.goto("/");
         await use(tradePage);
     }
 });
