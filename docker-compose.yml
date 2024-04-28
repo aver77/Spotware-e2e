@@ -1,0 +1,16 @@
+version: '3'
+services:
+  client:
+    image: spotware-e2e
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spotware-e2e
+    volumes:
+      - /tmp/spotware-e2e/npm-cache:/root/.npm:z
+      - ./spotware-e2e/src:/app/src:z
+    ports:
+      - "5111:80"
+    environment:
+      - PORT=80
+    restart: "no"
